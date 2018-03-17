@@ -1,5 +1,5 @@
 {
-  "name": "ngx-csv",
+  "name": "@ctrl/ngx-csv",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -90,5 +90,11 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  }
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/packages-dist/bundles/ctrl-ngx-csv.umd.min.js",
+      "maxSize": "1 kB"
+    }
+  ]
 }
