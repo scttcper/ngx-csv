@@ -1,0 +1,21 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "@ctrl/ngx-csv",
+  "version": "0.0.0",
+  "description": "",
+  "peerDependencies": {
+    "@angular/core": ">=5.2.0",
+    "@angular/common": ">=5.2.0"
+  },
+  "repository": "https://github.com/typectrl/ngx-csv.git",
+  "homepage": "https://github.com/typectrl/ngx-csv",
+  "license": "MIT",
+  "bugs": "https://github.com/typectrl/ngx-csv/issues",
+  "keywords": ["ngx", "angular", "angular-component"],
+  "ngPackage": {
+    "lib": {
+      "entryFile": "public_api.ts"
+    },
+    "dest": "../../dist"
+  }
+}
