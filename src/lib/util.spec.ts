@@ -69,30 +69,27 @@ describe(`core::jsonsHeaders`, () => {
     });
 });
 describe(`core::jsons2arrays`, () => {
-  let fixtures;
-  beforeEach(() => {
-    fixtures = [
-      {
-        maths: '90',
-      },
-      {
-        sport: '97',
-      },
-      {
-        maths: '77',
-        sport: 0,
-      },
-    ];
-  });
+  const fixtures: any[] = [
+    {
+      maths: '90',
+    },
+    {
+      sport: '97',
+    },
+    {
+      maths: '77',
+      sport: 0,
+    },
+  ];
   it(`converts an Array of literal objects to Array of arrays`, () => {
     const actual = jsons2arrays(fixtures);
-    const expected = [['maths', 'sport'], ['90', ''], ['', '97'], ['77', 0]];
+    const expected: any[] = [['maths', 'sport'], ['90', ''], ['', '97'], ['77', 0]];
     expect(actual).toEqual(expected);
   });
 
   it(`converts to Array of arrays following the order of headers`, () => {
     const actual = jsons2arrays(fixtures, ['sport', 'maths']);
-    const expected = [
+    const expected: any[] = [
       ['maths', 'sport'].reverse(),
       ['90', ''].reverse(),
       ['', '97'].reverse(),
@@ -103,7 +100,7 @@ describe(`core::jsons2arrays`, () => {
   it(`accepts any size of headers list`, () => {
     const headers = ['maths', 'sport', 'phy', 'ch'];
     const actual = jsons2arrays(fixtures, headers);
-    const expected = [
+    const expected: any[] = [
       headers,
       ['90', '', '', ''],
       ['', '97', '', ''],
@@ -114,10 +111,7 @@ describe(`core::jsons2arrays`, () => {
 });
 
 describe(`core::arrays2csv`, () => {
-  let fixtures;
-  beforeEach(() => {
-    fixtures = [[`a`, `b`], [`c`, `d`]];
-  });
+  const fixtures = [[`a`, `b`], [`c`, `d`]];
   it(`converts Array of arrays to string in CSV format`, () => {
     const actual = arrays2csv(fixtures);
     expect(typeof actual).toBe('string');
@@ -132,20 +126,16 @@ describe(`core::arrays2csv`, () => {
 });
 
 describe(`core::jsons2csv`, () => {
-  let fixtures;
-
-  beforeEach(() => {
-    fixtures = [
-      {
-        X: '88',
-        Y: '97',
-      },
-      {
-        X: '77',
-        Y: '99',
-      },
-    ];
-  });
+  const fixtures = [
+    {
+      X: '88',
+      Y: '97',
+    },
+    {
+      X: '77',
+      Y: '99',
+    },
+  ];
 
   it(`converts Array of literal objects to string in CSV format including headers`, () => {
     const actual = jsons2csv(fixtures);
@@ -157,9 +147,9 @@ describe(`core::jsons2csv`, () => {
   });
 
   it(`renders CSV string according to order of given headers`, () => {
-    const fixtures = [{ X: '12', Y: 'bb' }, { Y: 'ee', X: '55' }];
+    const otherfixtures = [{ X: '12', Y: 'bb' }, { Y: 'ee', X: '55' }];
     const headers = ['Y', 'X', 'Z'];
-    const actual = jsons2csv(fixtures, headers);
+    const actual = jsons2csv(otherfixtures, headers);
     expect(actual.startsWith(`"Y","X","Z"`)).toBeTruthy();
     expect(actual.endsWith(`"ee","55",""`)).toBeTruthy();
   });
@@ -179,10 +169,7 @@ describe(`core::jsons2csv`, () => {
 });
 
 describe(`core::string2csv`, () => {
-  let fixtures;
-  beforeEach(() => {
-    fixtures = `33,44\n55,66`;
-  });
+  const fixtures = `33,44\n55,66`;
   it(`returns the same string if no header given`, () => {
     expect(string2csv(fixtures)).toEqual(fixtures);
   });
@@ -194,10 +181,7 @@ describe(`core::string2csv`, () => {
 });
 
 describe(`core::toCSV`, () => {
-  let fixtures;
-  beforeEach(() => {
-    fixtures = { string: 'Xy', arrays: [[], []], jsons: [{}, {}] };
-  });
+  const fixtures = { string: 'Xy', arrays: [[], []], jsons: [{}, {}] };
   // it(`requires one argument at least`, () => {
   //   expect(() => toCSV()).toThrow();
   // });
@@ -227,27 +211,7 @@ describe(`core::buildURI`, () => {
     expect(
       buildURI(fixtures.jsons, false).startsWith(prefixCsvURI),
     ).toBeTruthy();
-    console.log(buildURI(fixtures.arrays));
     expect(buildURI(fixtures.arrays).startsWith(prefixCsvURI)).toBeTruthy();
     expect(buildURI(fixtures.string).startsWith(prefixCsvURI)).toBeTruthy();
   });
-
-  // it(`generates CSV string according to "delimiter"`, () => {
-  //   const prefixCsvURI = `blob:`;
-  //   const expectedSepartorCount = fixtures.arrays
-  //     .map(row => row.length - 1)
-  //     .reduce((total, next) => total + next, 0);
-  //   const delimiter = ';';
-  //   let fullURI = buildURI(fixtures.arrays, true, null, delimiter);
-
-  //   console.log(fullURI)
-  //   expect(fullURI.slice(prefixCsvURI.length).match(/;/g).length).toEqual(
-  //     expectedSepartorCount,
-  //   );
-
-  //   fullURI = buildURI(fixtures.arrays, true, null, delimiter);
-  //   expect(fullURI.slice(prefixCsvURI.length).match(/:/g).length).toEqual(
-  //     expectedSepartorCount,
-  //   );
-  // });
 });

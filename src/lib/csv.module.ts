@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { CsvDirective } from './csv.component';
+import { CsvDirective } from './csv.directive';
 
 @NgModule({
   imports: [CommonModule],

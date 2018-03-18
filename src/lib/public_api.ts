@@ -1,2 +1,2 @@
 export { CsvModule } from './csv.module';
-export { CsvComponent } from './csv.component';
+export { CsvDirective } from './csv.directive';
