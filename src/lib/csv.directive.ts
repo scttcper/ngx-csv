@@ -1,4 +1,4 @@
-import { Directive, OnChanges, Input, HostBinding } from '@angular/core';
+import { Directive, HostBinding, Input, OnChanges } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { buildURI, HeaderObj } from './util';

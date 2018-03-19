@@ -1,5 +1,5 @@
 import { Component, NgModule } from '@angular/core';
-import { TestBed, async } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 
 import { CsvModule } from './csv.module';
 

@@ -1,13 +1,13 @@
 import {
-  isJsons,
-  isArrays,
-  jsonsHeaders,
-  jsons2arrays,
   arrays2csv,
+  buildURI,
+  isArrays,
+  isJsons,
+  jsons2arrays,
   jsons2csv,
+  jsonsHeaders,
   string2csv,
   toCSV,
-  buildURI,
 } from './util';
 
 describe(`core::isJsons`, () => {
@@ -139,7 +139,6 @@ describe(`core::jsons2csv`, () => {
 
   it(`converts Array of literal objects to string in CSV format including headers`, () => {
     const actual = jsons2csv(fixtures);
-    const expectedHeaders = ['X', 'Y'];
     const expected = `"X","Y"|"88","97"|"77","99"`;
 
     expect(typeof actual).toEqual('string');

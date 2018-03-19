@@ -5,7 +5,7 @@
   "description": "",
   "peerDependencies": {
     "@angular/core": ">=5.2.0",
-    "@angular/common": ">=5.2.0"
+    "@angular/platform-browser": ">=5.2.0"
   },
   "repository": "https://github.com/typectrl/ngx-csv.git",
   "homepage": "https://github.com/typectrl/ngx-csv",
