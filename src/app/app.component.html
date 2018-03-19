@@ -8,7 +8,7 @@
         </svg>
         ngx-csv
       </h1>
-      <p class="lead mb-0">Angular directive for easily generating a CSV download in the browser.</p>
+      <p class="lead">Angular directive for easily generating a CSV download in the browser.</p>
       <mdo-github-button count="true" user="typectrl" repo="ngx-csv">
       </mdo-github-button>
     </div>
@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-12">
       <h5>Install</h5>
-      <pre class="bg-light p-3"><code>npm i @ctrl/ngx-csv</code></pre>
+      <pre class="bg-light p-3"><code>npm install @ctrl/ngx-csv</code></pre>
     </div>
   </div>
 </div>
@@ -34,7 +34,7 @@
   <div class="row">
     <div class="col-12">
       <h5>Use</h5>
-      <pre class="bg-light p-3"><code>&lt;a csvLink [data]="data">&lt;/a></code></pre>
+      <pre class="bg-light p-3"><code>&lt;a <strong>csvLink [data]="data"</strong>>Download&lt;/a></code></pre>
     </div>
   </div>
 </div>
@@ -45,11 +45,11 @@
     </div>
     <div class="col-12 mb-3">
       <p><strong>Array of objects</strong></p>
-      <pre class="bg-light p-3 mb-2"><code>data = [
+      <pre class="bg-light p-3 mb-2"><code>[
   {{ '{' }} firstname: 'Ahmed', lastname: 'Tomi', email: 'ah@smthing.co.com' },
   {{ '{' }} firstname: 'Raed', lastname: 'Labes', email: 'rl@smthing.co.com' },
   {{ '{' }} firstname: 'Yezzi', lastname: 'Min l3b', email: 'ymin@cocococo.com' },
-];</code></pre>
+]</code></pre>
       <a class="btn btn-primary" csvLink [data]="arrayOfObjects">
         <download-svg></download-svg>
         Download
@@ -58,12 +58,12 @@
 
     <div class="col-12 mb-3">
       <p><strong>Array of array of strings</strong></p>
-      <pre class="bg-light p-3 mb-2"><code>data = [
+      <pre class="bg-light p-3 mb-2"><code>[
   ['firstname', 'lastname', 'email'] ,
   ['Ahmed', 'Tomi' , 'ah@smthing.co.com'] ,
   ['Raed', 'Labes' , 'rl@smthing.co.com'] ,
   ['Yezzi', 'Min l3b', 'ymin@cocococo.com'],
-];</code></pre>
+]</code></pre>
       <a class="btn btn-primary" csvLink [data]="arrayOfArrays">
         <download-svg></download-svg>
         Download
