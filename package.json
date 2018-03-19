@@ -18,7 +18,7 @@
     "travis-deploy-once": "travis-deploy-once",
     "commit": "git-cz",
     "semantic-release": "cd dist && semantic-release",
-    "ghpages": "ng build --prod --no-progress --baseHref='/ngx-headroom/'"
+    "ghpages": "ng build --prod --no-progress --baseHref='/ngx-csv/'"
   },
   "private": true,
   "dependencies": {
