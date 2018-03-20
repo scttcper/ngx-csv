@@ -14,6 +14,8 @@
   <br>
 </div>
 
+**Demo**: https://typectrl.github.io/ngx-csv/
+
 ### Install
 
 ```sh
