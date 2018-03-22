@@ -77,12 +77,6 @@
       "commit-msg": "npm run commitlint"
     }
   },
-  "lint-staged": {
-    "*.ts": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
