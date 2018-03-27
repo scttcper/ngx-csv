@@ -51,7 +51,7 @@
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
     "fs-extra": "5.0.0",
-    "husky": "0.15.0-rc.12",
+    "husky": "0.15.0-rc.13",
     "jasmine-core": "2.99.1",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "2.0.0",
