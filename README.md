@@ -3,10 +3,10 @@
   <br>
   <a href="https://www.npmjs.com/package/@ctrl/ngx-csv">
     <img src="https://badge.fury.io/js/%40ctrl%2Fngx-csv.svg" alt="npm">
-  </a> 
+  </a>
   <a href="https://travis-ci.org/TypeCtrl/ngx-csv">
     <img src="https://travis-ci.org/TypeCtrl/ngx-csv.svg?branch=master" alt="travis">
-  </a> 
+  </a>
   <a href="https://codecov.io/github/typectrl/ngx-csv">
     <img src="https://img.shields.io/codecov/c/github/typectrl/ngx-csv.svg" alt="codecov">
   </a>
@@ -103,4 +103,5 @@ const data = [
 ```
 
 ### See Also
+
 * [react-csv](https://github.com/abdennour/react-csv)
