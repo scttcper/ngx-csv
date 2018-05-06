@@ -10,7 +10,6 @@ import { DownloadSvgComponent } from './download-svg/download-svg.component';
 @NgModule({
   declarations: [AppComponent, DownloadSvgComponent],
   imports: [BrowserModule, MdoButtonModule, CsvModule],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
