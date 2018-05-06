@@ -83,7 +83,12 @@ describe(`core::jsons2arrays`, () => {
   ];
   it(`converts an Array of literal objects to Array of arrays`, () => {
     const actual = jsons2arrays(fixtures);
-    const expected: any[] = [['maths', 'sport'], ['90', ''], ['', '97'], ['77', 0]];
+    const expected: any[] = [
+      ['maths', 'sport'],
+      ['90', ''],
+      ['', '97'],
+      ['77', 0],
+    ];
     expect(actual).toEqual(expected);
   });
 
