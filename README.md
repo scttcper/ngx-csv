@@ -13,6 +13,7 @@
   <br>
   <br>
 </div>
+> Easily generate a CSV download in the browser with Angular
 
 **Demo**: https://typectrl.github.io/ngx-csv/
 
