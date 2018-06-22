@@ -8,7 +8,7 @@
     "prebuild": "rimraf dist",
     "build": "ts-node build.ts",
     "publish": "node prepublish.js && cd dist && npm publish --access public",
-    "test": "ng test --browsers=ChromeCI",
+    "test": "ng test --browsers=ChromeCI --watch=false",
     "test:ci": "ng test --watch=false --code-coverage --no-progress --browsers=ChromeCI",
     "lint": "ng lint ngx-csv --type-check --format stylish",
     "lint:fix": "ng lint ngx-csv --fix --type-check ---format stylish",
