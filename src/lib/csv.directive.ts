@@ -6,7 +6,7 @@ import { buildURI, HeaderObj } from './util';
 @Directive({ selector: 'a[csvLink]' })
 export class CsvDirective implements OnChanges {
   /** the body of the csv */
-  @Input() data: string | string[][] | { [key: string]: string }[] = [];
+  @Input() data: string | string[][] | { [key: string]: string }[] | any[] = [];
   /** Set the first line of the csv */
   @Input() headers?: string[] | HeaderObj[];
   /** Set the seperator between values */

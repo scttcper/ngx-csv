@@ -74,7 +74,7 @@ export function string2csv(
 }
 
 export function toCSV(
-  data: string | string[][] | { [key: string]: string }[],
+  data: string | string[][] | { [key: string]: string }[] | any[],
   headers?: string[] | HeaderObj[],
   delimiter?: string,
 ) {
@@ -93,7 +93,7 @@ export function toCSV(
 }
 
 export function buildURI(
-  data: string | string[][] | { [key: string]: string }[],
+  data: string | string[][] | { [key: string]: string }[] | any[],
   uFEFF = true,
   headers?: string[] | HeaderObj[],
   delimiter?: string,
