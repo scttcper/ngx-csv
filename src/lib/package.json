@@ -10,7 +10,7 @@
     "@angular/core": "^5.2.0 || ^6.0.0 || ^7.0.0",
     "@angular/platform-browser": "^5.2.0 || ^6.0.0 || ^7.0.0"
   },
-  "repository": "https://github.com/typectrl/ngx-csv.git",
+  "repository": "typectrl/ngx-csv",
   "homepage": "https://github.com/typectrl/ngx-csv",
   "license": "MIT",
   "bugs": "https://github.com/typectrl/ngx-csv/issues",
