@@ -25,11 +25,11 @@ export function jsons2arrays(
   headers = headers || jsonsHeaders(jsons);
 
   // allow headers to have custom labels, defaulting to having the header data key be the label
-  let headerLabels: string[] = <string[]>headers;
-  let headerKeys: string[] = <string[]>headers;
+  let headerLabels: string[] = headers as string[];
+  let headerKeys: string[] = headers as string[];
   if (isJsons(headers)) {
-    headerLabels = (<HeaderObj[]>headers).map(header => header.label);
-    headerKeys = (<HeaderObj[]>headers).map(header => header.key);
+    headerLabels = (headers as HeaderObj[]).map(header => header.label);
+    headerKeys = (headers as HeaderObj[]).map(header => header.key);
   }
 
   const data = jsons.map(object =>
@@ -78,14 +78,14 @@ export function toCSV(
   headers?: string[] | HeaderObj[],
   delimiter?: string,
 ) {
-  if (isJsons(<any>data)) {
-    return jsons2csv(<{ [key: string]: string }[]>data, headers, delimiter);
+  if (isJsons(data as any)) {
+    return jsons2csv(data as { [key: string]: string }[], headers, delimiter);
   }
-  if (isArrays(<any>data)) {
-    return arrays2csv(<string[][]>data, headers, delimiter);
+  if (isArrays(data as any)) {
+    return arrays2csv(data as string[][], headers, delimiter);
   }
   if (typeof data === 'string') {
-    return string2csv(data, <string[]>headers, delimiter);
+    return string2csv(data, headers as string[], delimiter);
   }
   throw new TypeError(
     `Data should be a "String", "Array of arrays" OR "Array of objects" `,
