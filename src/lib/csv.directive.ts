@@ -3,7 +3,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { buildURI, HeaderObj } from './util';
 
-@Directive({ selector: 'a[csvLink]' })
+@Directive({ selector: '[csvLink]' })
 export class CsvDirective implements OnChanges {
   /** the body of the csv */
   @Input() data: string | string[][] | { [key: string]: string }[] | any[] = [];
