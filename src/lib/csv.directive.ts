@@ -25,7 +25,8 @@ export class CsvDirective implements OnChanges {
   constructor(private sanitizer: DomSanitizer) {}
 
   @HostListener('click') onClick() {
-    if (this.isIEBrowser()) { //IE handling
+    // IE handling
+    if (this.isIEBrowser()) {
       const file = blob(this.data, this.uFEFF, this.headers, this.delimiter);
       window.navigator.msSaveBlob(file, this.download);
     }
