@@ -1,5 +1,6 @@
 import {
   arrays2csv,
+  blob,
   buildURI,
   isArrays,
   isJsons,
@@ -200,6 +201,19 @@ describe(`core::toCSV`, () => {
 
   it(`accepts data as "string" `, () => {
     expect(() => toCSV(fixtures.string)).toBeTruthy();
+  });
+});
+
+describe(`core::blob`, () => {
+  const fixtures = {
+    string: 'Xy',
+    arrays: [['a', 'b'], ['c', 'd']],
+    jsons: [{}, {}],
+  };
+
+  it(`creates blob instance`, () => {
+    expect(blob(fixtures.arrays)).toBeTruthy();
+    expect(blob(fixtures.string)).toBeTruthy();
   });
 });
 

@@ -1,7 +1,7 @@
-import { Directive, HostBinding, Input, OnChanges } from '@angular/core';
+import { Directive, HostBinding, HostListener, Input, OnChanges } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
-import { buildURI, HeaderObj } from './util';
+import { blob, buildURI, HeaderObj } from './util';
 
 @Directive({ selector: '[csvLink]' })
 export class CsvDirective implements OnChanges {
@@ -21,8 +21,19 @@ export class CsvDirective implements OnChanges {
   @HostBinding() href?: SafeResourceUrl;
   /** filename */
   @HostBinding() download = 'data.csv';
-  @Input() @HostBinding() target = '_blank';
+  @Input() @HostBinding() target = this.isIEBrowser() ? '' : '_blank';
   constructor(private sanitizer: DomSanitizer) {}
+
+  @HostListener('click') onClick() {
+    if (this.isIEBrowser()) { //IE handling
+      const file = blob(this.data, this.uFEFF, this.headers, this.delimiter);
+      window.navigator.msSaveBlob(file, this.download);
+    }
+  }
+
+  isIEBrowser(): boolean {
+    return !!window.navigator.msSaveOrOpenBlob;
+  }
 
   ngOnChanges() {
     this.href = this.sanitizer.bypassSecurityTrustResourceUrl(

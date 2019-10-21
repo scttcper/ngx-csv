@@ -92,13 +92,21 @@ export function toCSV(
   );
 }
 
-export function buildURI(
+export function blob(
   data: string | string[][] | { [key: string]: string }[] | any[],
   uFEFF = true,
   headers?: string[] | HeaderObj[],
   delimiter?: string,
 ) {
   const csv = toCSV(data, headers, delimiter);
-  const blob = new Blob([uFEFF ? '\uFEFF' : '', csv], { type: 'text/csv' });
-  return URL.createObjectURL(blob);
+  return new Blob([uFEFF ? '\uFEFF' : '', csv], { type: 'text/csv' });
+}
+
+export function buildURI(
+  data: string | string[][] | { [key: string]: string }[] | any[],
+  uFEFF = true,
+  headers?: string[] | HeaderObj[],
+  delimiter?: string,
+) {
+  return URL.createObjectURL(blob(data, uFEFF, headers, delimiter));
 }
