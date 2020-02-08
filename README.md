@@ -24,6 +24,15 @@
 npm install @ctrl/ngx-csv
 ```
 
+## Dependencies
+
+Latest version available for each version of Angular
+
+| ngx-trend | Angular |
+| --------- | ------- |
+| 2.1.1     | 8.x     |
+| current   | >= 9.x  |
+
 ### Import
 
 ```ts
