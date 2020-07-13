@@ -1,22 +1,12 @@
-<div align="center">
-  <h1>ngx-csv</h1>
-  <br>
-  <a href="https://www.npmjs.com/package/@ctrl/ngx-csv">
-    <img src="https://badge.fury.io/js/%40ctrl%2Fngx-csv.svg" alt="npm">
-  </a>
-  <a href="https://travis-ci.org/TypeCtrl/ngx-csv">
-    <img src="https://travis-ci.org/TypeCtrl/ngx-csv.svg?branch=master" alt="travis">
-  </a>
-  <a href="https://codecov.io/github/typectrl/ngx-csv">
-    <img src="https://img.shields.io/codecov/c/github/typectrl/ngx-csv.svg" alt="codecov">
-  </a>
-  <br>
-  <br>
-</div>
+# @ctrl/ngx-csv
+
+[![npm](https://badgen.net/npm/v/@ctrl/ngx-csv)](https://www.npmjs.com/package/@ctrl/ngx-csv)
+[![CircleCI](https://badgen.net/circleci/github/scttcper/ngx-csv)](https://circleci.com/gh/scttcper/ngx-csv)
+[![coverage](https://badgen.net/codecov/c/github/scttcper/ngx-csv)](https://codecov.io/gh/scttcper/ngx-csv)
 
 > Easily generate a CSV download in the browser with Angular
 
-**Demo**: https://ngx-csv.netlify.com/
+**Demo**: https://ngx-csv.vercel.app
 
 ### Install
 
@@ -31,7 +21,8 @@ Latest version available for each version of Angular
 | ngx-trend | Angular |
 | --------- | ------- |
 | 2.1.1     | 8.x     |
-| current   | >= 9.x  |
+| 3.0.1     | 9.x     |
+| current   | >= 10.x |
 
 ### Import
 
@@ -49,12 +40,12 @@ Add the csvLink directive to your `<a>` tag
 
 ### Input
 
-* **data**: The body of the csv
-* **headers**: Set the first line of the csv
-* **delimiter**: Set the seperator between values. Default `','`
-* **filename**: Set the filename of the csv. Default `data.csv`
-* **uFEFF**: Adds a Byte order mark to setup the csv as UTF-8. Default `true`
-* **target**: Element target. Default `\_blank
+- **data**: The body of the csv
+- **headers**: Set the first line of the csv
+- **delimiter**: Set the seperator between values. Default `','`
+- **filename**: Set the filename of the csv. Default `data.csv`
+- **uFEFF**: Adds a Byte order mark to setup the csv as UTF-8. Default `true`
+- **target**: Element target. Default `\_blank
 
 ### Accepted Data Formats
 
@@ -115,4 +106,4 @@ const data = [
 
 ### See Also
 
-* [react-csv](https://github.com/abdennour/react-csv)
+- [react-csv](https://github.com/abdennour/react-csv)

@@ -7,13 +7,11 @@
   },
   "version": "0.0.0-placeholder",
   "peerDependencies": {
-    "@angular/core": ">=8.0.0",
-    "@angular/platform-browser": ">=8.0.0"
+    "@angular/core": ">=10.0.0-0"
   },
-  "repository": "typectrl/ngx-csv",
-  "homepage": "https://github.com/typectrl/ngx-csv",
+  "repository": "scttcper/ngx-csv",
+  "homepage": "https://ngx-csv.vercel.app",
   "license": "MIT",
-  "bugs": "https://github.com/typectrl/ngx-csv/issues",
   "keywords": [
     "ngx",
     "angular",

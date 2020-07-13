@@ -1,13 +1,13 @@
 import { async, TestBed } from '@angular/core/testing';
 
-import { MdoButtonModule } from '@ctrl/ngx-github-buttons';
+import { GhButtonModule } from '@ctrl/ngx-github-buttons';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [AppModule, MdoButtonModule],
+      imports: [AppModule, GhButtonModule],
     }).compileComponents();
   }));
 
