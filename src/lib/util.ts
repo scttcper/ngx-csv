@@ -1,3 +1,4 @@
+/* eslint-disable prefer-arrow/prefer-arrow-functions */
 export interface HeaderObj {
   label: string;
   key: string;
