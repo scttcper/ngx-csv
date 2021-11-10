@@ -22,7 +22,8 @@ Latest version available for each version of Angular
 | --------- | ------- |
 | 2.1.1     | 8.x     |
 | 3.0.1     | 9.x     |
-| current   | >= 10.x |
+| 4.0.0     | 10.x    |
+| current   | >= 12.x |
 
 ### Import
 

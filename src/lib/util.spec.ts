@@ -59,15 +59,15 @@ describe(`core::jsonsHeaders`, () => {
   it(`returns union of keys of all array items `, () => {
     const actual = jsonsHeaders(fixtures);
     expect(actual).toEqual([`maths`, `phy`, 'sport', 'ch']);
-  }),
-    it(`does not duplicate keys on the array`, () => {
-      const actual = jsonsHeaders(fixtures);
-      const keysOfAllItems = fixtures
-        .map(object => Object.keys(object))
-        .reduce((a, b) => [...a, ...b], []);
-      expect(actual.length).toBeLessThanOrEqual(keysOfAllItems.length);
-      expect(actual.length).toEqual(new Set(keysOfAllItems).size);
-    });
+  });
+  it(`does not duplicate keys on the array`, () => {
+    const actual = jsonsHeaders(fixtures);
+    const keysOfAllItems = fixtures
+      .map(object => Object.keys(object))
+      .reduce((a, b) => [...a, ...b], []);
+    expect(actual.length).toBeLessThanOrEqual(keysOfAllItems.length);
+    expect(actual.length).toEqual(new Set(keysOfAllItems).size);
+  });
 });
 describe(`core::jsons2arrays`, () => {
   const fixtures: any[] = [
@@ -106,18 +106,16 @@ describe(`core::jsons2arrays`, () => {
   it(`accepts any size of headers list`, () => {
     const headers = ['maths', 'sport', 'phy', 'ch'];
     const actual = jsons2arrays(fixtures, headers);
-    const expected: any[] = [
-      headers,
-      ['90', '', '', ''],
-      ['', '97', '', ''],
-      ['77', 0, '', ''],
-    ];
+    const expected: any[] = [headers, ['90', '', '', ''], ['', '97', '', ''], ['77', 0, '', '']];
     expect(actual).toEqual(expected);
   });
 });
 
 describe(`core::arrays2csv`, () => {
-  const fixtures = [[`a`, `b`], [`c`, `d`]];
+  const fixtures = [
+    [`a`, `b`],
+    [`c`, `d`],
+  ];
   it(`converts Array of arrays to string in CSV format`, () => {
     const actual = arrays2csv(fixtures);
     expect(typeof actual).toBe('string');
@@ -152,7 +150,10 @@ describe(`core::jsons2csv`, () => {
   });
 
   it(`renders CSV string according to order of given headers`, () => {
-    const otherfixtures = [{ X: '12', Y: 'bb' }, { Y: 'ee', X: '55' }];
+    const otherfixtures = [
+      { X: '12', Y: 'bb' },
+      { Y: 'ee', X: '55' },
+    ];
     const headers = ['Y', 'X', 'Z'];
     const actual = jsons2csv(otherfixtures, headers);
     expect(actual.startsWith(`"Y","X","Z"`)).toBeTruthy();
@@ -207,7 +208,10 @@ describe(`core::toCSV`, () => {
 describe(`core::blob`, () => {
   const fixtures = {
     string: 'Xy',
-    arrays: [['a', 'b'], ['c', 'd']],
+    arrays: [
+      ['a', 'b'],
+      ['c', 'd'],
+    ],
     jsons: [{}, {}],
   };
 
@@ -220,15 +224,16 @@ describe(`core::blob`, () => {
 describe(`core::buildURI`, () => {
   const fixtures = {
     string: 'Xy',
-    arrays: [['a', 'b'], ['c', 'd']],
+    arrays: [
+      ['a', 'b'],
+      ['c', 'd'],
+    ],
     jsons: [{}, {}],
   };
 
   it(`generates URI to download data in CSV format`, () => {
     const prefixCsvURI = `blob:`;
-    expect(
-      buildURI(fixtures.jsons, false).startsWith(prefixCsvURI),
-    ).toBeTruthy();
+    expect(buildURI(fixtures.jsons, false).startsWith(prefixCsvURI)).toBeTruthy();
     expect(buildURI(fixtures.arrays).startsWith(prefixCsvURI)).toBeTruthy();
     expect(buildURI(fixtures.string).startsWith(prefixCsvURI)).toBeTruthy();
   });
