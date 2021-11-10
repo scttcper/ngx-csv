@@ -1,5 +1,5 @@
 import { Component, NgModule } from '@angular/core';
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CsvModule } from './csv.module';
 
@@ -24,17 +24,17 @@ export class TestComponent {
 export class NameModule {}
 
 describe('CsvDirective', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [NameModule],
     }).compileComponents();
   }));
-  it('should create the app', async(() => {
+  it('should create the app', waitForAsync(() => {
     const fixture = TestBed.createComponent(TestComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it('should set href', async(() => {
+  it('should set href', waitForAsync(() => {
     const fixture = TestBed.createComponent(TestComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
