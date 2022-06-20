@@ -18,13 +18,13 @@ npm install @ctrl/ngx-csv
 
 Latest version available for each version of Angular
 
-| ngx-trend | Angular    |
-| --------- | ---------- |
-| 2.1.1     | 8.x        |
-| 3.0.1     | 9.x        |
-| 4.0.0     | 10.x       |
-| 5.0.0     | 12.x, 13.x |
-| current   | >= 14.x    |
+| ngx-csv | Angular    |
+| ------- | ---------- |
+| 2.1.1   | 8.x        |
+| 3.0.1   | 9.x        |
+| 4.0.0   | 10.x       |
+| 5.0.0   | 12.x, 13.x |
+| current | >= 14.x    |
 
 ### Import
 
